@@ -1,24 +1,24 @@
-import React ,{useState} from 'react'
+import React, { useState } from 'react'
 
 
 const Contact = () => {
-  const [data,setData]=useState({
-    fullname:'',
-    phoneno:'',
-    message:'',
-    email:'',
+  const [data, setData] = useState({
+    fullname: '',
+    phoneno: '',
+    message: '',
+    email: '',
   });
 
-  const InputEvent=(event)=>{
-     const {name,value}=event.target;
-     setData((preVal)=>{
-       return {
-         ...preVal,
-         [name]:value,
-       }
-     })
+  const InputEvent = (event) => {
+    const { name, value } = event.target;
+    setData((preVal) => {
+      return {
+        ...preVal,
+        [name]: value,
+      }
+    })
   };
-  const formSubmit=(e)=>{
+  const formSubmit = (e) => {
     e.preventDefault();
     alert(`My name is ${data.fullname}. My mobile number is ${data.phoneno} and email is ${data.email}. Here is what I want to say ${data.message}`)
   };
@@ -33,7 +33,7 @@ const Contact = () => {
             <form onSubmit={formSubmit}>
               <div className="mb-3">
                 <label for="exampleFormControlInput1" className="form-label">Full Name</label>
-                <input type="text" className="form-control" id="exampleFormControlInput1" name='fullname' value={data.fullname} onChange={InputEvent} placeholder="Enter Your Name" required/>
+                <input type="text" className="form-control" id="exampleFormControlInput1" name='fullname' value={data.fullname} onChange={InputEvent} placeholder="Enter Your Name" required />
               </div>
               <div className="mb-3">
                 <label for="exampleFormControlInput1" className="form-label">Contact Number</label>
@@ -41,7 +41,7 @@ const Contact = () => {
               </div>
               <div className="mb-3">
                 <label for="exampleFormControlInput1" className="form-label">Email address</label>
-                <input type="email" className="form-control" id="exampleFormControlInput1" name='email' value={data.email} onChange={InputEvent} placeholder="name@example.com" required/>
+                <input type="email" className="form-control" id="exampleFormControlInput1" name='email' value={data.email} onChange={InputEvent} placeholder="name@example.com" required />
               </div>
               <div className="mb-3">
                 <label for="exampleFormControlTextarea1" className="form-label">Message</label>
@@ -55,7 +55,7 @@ const Contact = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default Contact
